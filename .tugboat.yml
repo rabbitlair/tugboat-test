@@ -1,5 +1,6 @@
 services:
     apache:
         image: tugboatqa/httpd
+        subpath: false
         commands:
-            init: ln -sf "${TUGBOAT_ROOT}/docroot" "${DOCROOT}"
+            init: ln -snf "${TUGBOAT_ROOT}/docroot" "${DOCROOT}"
