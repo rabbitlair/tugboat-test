@@ -1,0 +1,5 @@
+services:
+    apache:
+        image: tugboatqa/httpd
+        commands:
+            init: ln -sf "${TUGBOAT_ROOT}/docroot" "${DOCROOT}"
