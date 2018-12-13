@@ -1,6 +1,8 @@
 services:
     apache:
         image: tugboatqa/httpd
+        http: true
+        https: false
         commands:
             init: ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
             build: cat .tugboat/tugboat.txt
