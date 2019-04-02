@@ -1,3 +1,4 @@
+<?php sleep(60) ?>
 <html>
     <head>
         <title>Tugboat Test Page</title>
