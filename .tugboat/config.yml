@@ -1,6 +1,5 @@
 services:
-    apache:
-        image: tugboatqa/httpd
+    alpine:
+        image: tugboatqa/alpine
         commands:
-            init: ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
             build: cat .tugboat/tugboat.txt
