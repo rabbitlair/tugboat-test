@@ -5,7 +5,7 @@ services:
             init: ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
         screenshots:
             - /
-            - /foo
+            - /foo:
                 aliases: ['bar', 'baz']
                 options:
                     timeout: 30
