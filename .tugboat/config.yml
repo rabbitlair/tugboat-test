@@ -3,4 +3,17 @@ services:
         image: tugboatqa/httpd
         commands:
             init: ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
-            build: cat .tugboat/tugboat.txt
+        screenshots:
+            - /
+            - /foo
+                aliases: ['bar', 'baz']
+                options:
+                    timeout: 30
+                    waitUntil: load
+                    retry: 1
+            - /burt:
+                aliases: ['gumma', 'goo']
+                options:
+                    timeout: 45
+                    waitUntil: networkidle0
+                    retry: 3
