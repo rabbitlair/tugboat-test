@@ -1,6 +1,7 @@
 services:
     apache:
         image: tugboatqa/httpd
+        default: true
         commands:
             init: ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
         visualdiffs: /
