@@ -6,4 +6,4 @@ services:
             init: ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
         visualdiffs: /
     mysql:
-        image: tugboatqa/mysql
+        image: tugboatqa/mysql:5
