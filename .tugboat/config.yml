@@ -1,7 +1,9 @@
 services:
     apache:
         image: tugboatqa/httpd
-        default: true
+        aliases: test
+        http: true
+        https: false
         commands:
             init: ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
         visualdiffs:
@@ -10,5 +12,3 @@ services:
             - /foo
             - /bar
             - /baz
-    mysql:
-        image: tugboatqa/mysql:5
