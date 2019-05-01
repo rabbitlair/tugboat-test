@@ -6,7 +6,7 @@ services:
             init: ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
         visualdiffs:
             - url: /
-              aliases: [ :default, foo, bar, baz ]
+              # aliases: [ :default, foo, bar, baz ]
             - /foo
             - /bar
             - /baz
