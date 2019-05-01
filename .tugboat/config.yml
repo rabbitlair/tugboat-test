@@ -4,6 +4,10 @@ services:
         default: true
         commands:
             init: ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
-        visualdiffs: /
+        visualdiffs:
+            - url: /
+              aliases: [ :default, foo, bar ]
+            - /foo
+            - /bar
     mysql:
         image: tugboatqa/mysql:5
