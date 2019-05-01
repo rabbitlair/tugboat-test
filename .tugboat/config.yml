@@ -6,12 +6,5 @@ services:
             init: ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
         visualdiffs:
             - url: /
-              aliases: [ :default, foo, bar, baz ]
-            - url: /foo
-              aliases: [ :default, foo, bar, baz ]
-            - url: /bar
-              aliases: [ :default, foo, bar, baz ]
-            - url: /baz
-              aliases: [ :default, foo, bar, baz ]
     mysql:
         image: tugboatqa/mysql:5
