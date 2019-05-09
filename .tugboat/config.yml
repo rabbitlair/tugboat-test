@@ -8,3 +8,4 @@ services:
             init: ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
         visualdiffs:
             - url: /
+              waitUntil: ['load', 'networkidle0']
