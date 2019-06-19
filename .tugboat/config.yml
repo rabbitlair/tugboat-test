@@ -8,12 +8,18 @@ services:
         default: true
         commands:
             init: ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
-            build: cat .tugboat/tugboat.txt
+            build: echo $TUGBOAT_SERVICE
     memcached:
         image: tugboatqa/memcached
         depends: redis
+        commands:
+            build: echo $TUGBOAT_SERVICE
     redis:
         image: tugboatqa/redis
-    varinsh:
+        commands:
+            build: echo $TUGBOAT_SERVICE
+    varnish:
         image: tugboatqa/varnish
         depends: apache
+        commands:
+            build: echo $TUGBOAT_SERVICE
