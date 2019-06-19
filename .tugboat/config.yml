@@ -4,6 +4,16 @@ services:
         aliases: test
         http: true
         https: false
+        depends: memcached
+        default: true
         commands:
             init: ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
             build: cat .tugboat/tugboat.txt
+    memcached:
+        image: tugboatqa/memcached
+        depends: redis
+    redis:
+        image: tugboatqa/redis
+    varinsh:
+        image: tugboatqa/varnish
+        depends: apache
