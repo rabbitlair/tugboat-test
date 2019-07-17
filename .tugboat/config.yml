@@ -4,6 +4,14 @@ services:
         aliases: test
         http: true
         https: false
+        default: true
         commands:
             init: ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
             build: cat .tugboat/tugboat.txt
+
+    node:
+        image: tugboatqa/node:10
+        commands:
+            init:
+                - env | sort
+                - pwd
