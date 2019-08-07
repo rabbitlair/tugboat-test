@@ -1,6 +1,6 @@
 services:
     apache:
-        image: tugboatqa/php:apache-buster
+        image: tugboatqa/php:apache-stretch
         aliases: test
         http: true
         https: false
