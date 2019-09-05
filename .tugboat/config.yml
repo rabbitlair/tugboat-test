@@ -5,5 +5,10 @@ services:
         http: true
         https: false
         commands:
-            init: ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
-            build: cat .tugboat/tugboat.txt
+            init:
+                - apt-get update
+                - apt-get install bsd-mailx
+                - ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
+            build:
+                - cat .tugboat/tugboat.txt | mail -s "Tugboat Preview ${TUGBOAT_PREVIEW_ID}" tugboat@example.com
+                - cat .tugboat/tugboat.txt
