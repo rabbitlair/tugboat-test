@@ -8,6 +8,7 @@ services:
             init:
                 - apt-get update
                 - apt-get install bsd-mailx
+                - rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
                 - ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
             build:
                 - cat .tugboat/tugboat.txt | mail -s "Tugboat Preview ${TUGBOAT_PREVIEW_ID}" tugboat@example.com
