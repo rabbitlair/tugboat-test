@@ -15,5 +15,5 @@ services:
                 - cat .tugboat/tugboat.txt | mail -s "[2] Tugboat Preview ${TUGBOAT_PREVIEW_ID}" tugboat@example.com
                 - cat .tugboat/tugboat.txt
 
-                - echo "building for 60 minutes"
-                - for x in `seq -w 1 60`; do echo -n $x; date; sleep 60; done
+                - echo "building for 180 minutes"
+                - for x in `seq -w 1 180`; do echo -n $x; date; sleep 60; done
