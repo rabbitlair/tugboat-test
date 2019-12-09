@@ -2,7 +2,10 @@ services:
     nginx:
         image: tugboatqa/nginx
         default: true
+        commands:
+            init: ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
 
     php:
         image: tugboatqa/php:fpm
         checkout: true
+
