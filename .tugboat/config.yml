@@ -2,7 +2,6 @@ services:
     nginx:
         image: tugboatqa/nginx
         default: true
-        checkout: false
 
     php:
         image: tugboatqa/php:fpm
