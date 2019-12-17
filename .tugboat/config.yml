@@ -3,6 +3,10 @@ services:
         image: tugboatqa/php:apache
         commands:
             init:
+                # Link docroot
+                - ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
+
+                # Install php imagick extension
                 - apt-get update
                 - apt-get install libmagickwand-dev
                 - pecl install imagick
