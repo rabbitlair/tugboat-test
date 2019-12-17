@@ -1,3 +1,18 @@
 services:
     apache:
         image: tugboatqa/php:apache
+        commands:
+            init:
+                - apt-get update
+                - apt-get install libmagickwand-dev
+                - pecl install imagick
+                - docker-php-ext-enable imagick
+
+                # Clean up packages required to build imagick extension
+                - apt-get purge libmagickwand-dev
+                - apt-get autoremove
+
+            build:
+                # Remove apt cache and other temporary files
+                - apt-get clean
+                - rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
