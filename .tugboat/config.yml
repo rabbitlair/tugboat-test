@@ -2,7 +2,6 @@ services:
     apache:
         image: tugboatqa/httpd
         default: true
-        aliases: test
         http: true
         https: false
         commands:
