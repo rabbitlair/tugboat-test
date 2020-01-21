@@ -9,6 +9,13 @@ services:
             init: ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
             build: cat .tugboat/tugboat.txt
 
+    varnish:
+        image: tugboatqa/nginx
+        expose: 80
+        aliases:
+            - nginx1
+            - nginx2
+
     memcached:
         image: tugboatqa/memcached
 
