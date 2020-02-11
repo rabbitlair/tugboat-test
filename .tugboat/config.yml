@@ -11,6 +11,8 @@ services:
 
     memcached:
         image: tugboatqa/memcached
+        depends: redis
 
     redis:
         image: tugboatqa/redis
+        depends: memcached
