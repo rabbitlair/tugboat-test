@@ -6,8 +6,8 @@ services:
             update: echo 'update apache'
             build: echo 'build apache'
     mariadb:
-        image: tugboatqa/mariadb:5.5
+        image: tugboatqa/mariadb:10.3
         commands:
-            init: echo 'init mariadb:5.5'
-            update: echo 'update mariadb:5.5'
-            build: echo 'build mariadb:5.5'
+            init: echo 'init mariadb:10.3'
+            update: echo 'update mariadb:10.3'
+            build: echo 'build mariadb:10.3'
