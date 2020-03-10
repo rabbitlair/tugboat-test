@@ -1,6 +1,7 @@
 services:
     apache:
         image: tugboatqa/httpd
+        default: true
         commands:
             init: echo 'init apache'
             update: echo 'update apache'
