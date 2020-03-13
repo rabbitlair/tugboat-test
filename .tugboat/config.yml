@@ -1,15 +1,7 @@
 services:
     apache:
-        default: true
         image: tugboatqa/httpd
-        depends: mariadb
         commands:
             init: echo 'init apache'
             update: echo 'update apache'
             build: echo 'build apache'
-    mariadb:
-        image: tugboatqa/mariadb:5.5
-        commands:
-            init: echo 'init mariadb:5.5'
-            update: echo 'update mariadb:5.5'
-            build: echo 'build mariadb:5.5'
