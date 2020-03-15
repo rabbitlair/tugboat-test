@@ -13,3 +13,9 @@ services:
             init: echo 'init mariadb:10.3'
             update: echo 'update mariadb:10.3'
             build: echo 'build mariadb:10.3'
+    redis:
+        image: tugboatqa/redis
+        commands:
+            init: echo 'init redis'
+            update: echo 'update redis'
+            build: echo 'build redis'
