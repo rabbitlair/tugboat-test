@@ -5,5 +5,11 @@ services:
         http: true
         https: false
         commands:
-            init: ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
-            build: cat .tugboat/tugboat.txt
+            init:
+                - echo "********** INIT **********"
+                - ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
+            update:
+                - echo "********** UPDATE **********"
+            build:
+                - echo "********** BUILD **********"
+                - cat .tugboat/tugboat.txt
