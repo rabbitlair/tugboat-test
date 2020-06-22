@@ -10,7 +10,7 @@ services:
 
                 # Configure nginx
                 - ln -snf "${TUGBOAT_ROOT}" /usr/share/nginx/html
-                - cp .tugboat/nginx.conf /etc/nginx/conf.d/default.conf
+                - cp .tugboat/nginx.vhost /etc/nginx/sites-available/default
 
                 # Create/Start nginx service
                 - mkdir -p /etc/service/nginx
