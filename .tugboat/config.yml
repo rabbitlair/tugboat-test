@@ -9,6 +9,7 @@ services:
                 - apt-get install nginx
 
                 # Configure nginx
+                - rm -rf /usr/share/nginx/html
                 - ln -snf "${TUGBOAT_ROOT}" /usr/share/nginx/html
                 - cp .tugboat/nginx.vhost /etc/nginx/sites-available/default
 
