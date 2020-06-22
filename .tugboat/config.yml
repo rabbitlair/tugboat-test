@@ -17,3 +17,7 @@ services:
                 - cp .tugboat/nginx.run /etc/service/nginx/run
                 - chmod +x /etc/service/nginx/run
 
+                # Clean up apt artifacts to keep the Preview small
+                - apt-get clean
+                - rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
