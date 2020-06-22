@@ -1,13 +1,19 @@
 services:
-    nginx:
-        image: tugboatqa/nginx
+    php:
+        image: tugboatqa/php:fpm
         default: true
         commands:
             init:
-                - ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
-                - cp .tugboat/default.conf /etc/nginx/conf.d/default.conf
+                # Install nginx
+                - apt-get update
+                - apt-get install nginx
 
-    php:
-        image: tugboatqa/php:fpm
-        checkout: true
+                # Configure nginx
+                - ln -snf "${TUGBOAT_ROOT}" /usr/share/nginx/html
+                - cp .tugboat/nginx.conf /etc/nginx/conf.d/default.conf
+
+                # Create/Start nginx service
+                - mkdir -p /etc/service/nginx
+                - cp .tugboat/nginx.run /etc/service/nginx/run
+                - chmod +x /etc/service/nginx/run
 
