@@ -1,11 +1,8 @@
 body {
-    background-color: #f7f7f7;
+    background-color: #07536f;
     text-align: center;
-}
-
-img {
-    width: 75%;
-    position: relative;
-    top: 50%;
-    transform: translateY(-75%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
 }
