@@ -7,14 +7,14 @@ services:
         https: false
         commands:
             init: ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
-            build: echo "##########  apache commands  ##########"
+            build: echo "########## apache commands ##########"
 
     memcached:
         image: tugboatqa/memcached
         commands:
-            build: echo "##########  memcached commands  ##########"
+            build: echo "########## memcached commands ##########"
 
     redis:
         image: tugboatqa/redis
         commands:
-            build: echo "##########  redis commands  ##########"
+            build: echo "########## redis commands ##########"
