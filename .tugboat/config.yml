@@ -14,3 +14,4 @@ services:
                 - echo "********** BUILD **********"
             online:
                 - echo "********** ONLINE **********"
+                - /bin/false
