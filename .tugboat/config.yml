@@ -14,3 +14,4 @@ services:
                 - echo "********** BUILD **********"
             online:
                 - echo "********** ONLINE **********"
+                - curl $TUGBOAT_DEFAULT_SERVICE_URL
