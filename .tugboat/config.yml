@@ -11,6 +11,14 @@ services:
                 - apt-get install bsd-mailx
                 - rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
                 - ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
+
+                # Install Diffy
+                - apt-get update
+                - apt-get install php-cli
+                - curl -o /usr/local/bin/diffy https://github.com/DiffyWebsite/diffy-cli/releases/download/0.1.6/diffy.phar
+                - chmod +x /usr/local/bin/diffy
+                - diffy auth:login $DIFFY_API_KEY
+
             update:
                 - echo "********** UPDATE **********"
             build:
@@ -18,3 +26,6 @@ services:
                 - cat .tugboat/tugboat.txt | mail -s "[1] Tugboat Preview ${TUGBOAT_PREVIEW_ID}" tugboat@example.com
                 - cat .tugboat/tugboat.txt | mail -s "[2] Tugboat Preview ${TUGBOAT_PREVIEW_ID}" tugboat@example.com
                 - cat .tugboat/tugboat.txt
+
+            online:
+                - diffy project:compare $DIFFY_PROJECT_ID prod custom --env2Url=$TUGBOAT_DEFAULT_SERVICE_URL
