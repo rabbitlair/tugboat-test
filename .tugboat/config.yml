@@ -14,3 +14,4 @@ services:
                 - echo "********** BUILD **********"
             clone:
                 - echo "********** CLONE **********"
+                - touch /cloned
