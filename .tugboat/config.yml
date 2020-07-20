@@ -20,3 +20,4 @@ services:
                 - cat .tugboat/tugboat.txt
             start:
                 - sleep 3600 &
+                - echo foo
