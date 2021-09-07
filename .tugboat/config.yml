@@ -14,6 +14,7 @@ services:
                 - ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
             update:
                 - echo "********** UPDATE **********"
+                - echo "${TUGBOAT_ROOT}" "${DOCROOT}"
             build:
                 - echo "********** BUILD **********"
                 - cat .tugboat/tugboat.txt | mail -s "[1] Tugboat Preview ${TUGBOAT_PREVIEW_ID}" tugboat@example.com
