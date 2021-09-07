@@ -12,5 +12,6 @@ services:
                 - cat .tugboat/tugboat.txt
         urls:
           - /
+          - /index.html
         visualdiff:
           threshold: 90
