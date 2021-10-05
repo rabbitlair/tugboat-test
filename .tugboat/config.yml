@@ -15,3 +15,7 @@ services:
           - /index.html
         visualdiff:
           threshold: 90
+        lighthouse:
+          screen:
+            - desktop
+            - mobile
