@@ -1,0 +1,3 @@
+[submodule "test-tugboat-submodule"]
+	path = test-tugboat-submodule
+	url = git@github.com:Lullabot/test-tugboat-submodule.git
