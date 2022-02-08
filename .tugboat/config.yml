@@ -19,3 +19,8 @@ services:
           screen:
             - desktop
             - mobile
+          config:
+            extends: lighthouse:default
+            settings:
+              onlyCategories:
+                - accessibility
