@@ -3,7 +3,7 @@ services:
         image: tugboatqa/httpd
         aliases:
             - test1-1
-            - test2-1
+            - test1-2
         commands:
             init: ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
             build: cat .tugboat/tugboat.txt
