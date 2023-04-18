@@ -9,9 +9,9 @@ services:
 
         urls:
             alias0:
-              - /
-            visualdiff:
-                threshold:
-                    desktop: 90
-                    mobile: 95
-                    tablet: 99
+              - url: /
+                visualdiff:
+                    threshold:
+                        desktop: 90
+                        mobile: 95
+                        tablet: 99
