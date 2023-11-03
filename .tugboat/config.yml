@@ -15,5 +15,3 @@ services:
                         desktop: 90
                         mobile: 95
                         tablet: 99
-                lighthouse:
-                    enable: true
