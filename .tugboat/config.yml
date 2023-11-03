@@ -2,7 +2,7 @@ services:
     php:
         image: tugboatqa/php:apache
         http: true
-        https: false
+        https: true
         commands:
             init:
                 - ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
