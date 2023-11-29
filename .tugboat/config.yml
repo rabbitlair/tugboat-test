@@ -15,3 +15,5 @@ services:
                         desktop: 90
                         mobile: 95
                         tablet: 99
+            alias1:
+              - url: /sitemap.xml
