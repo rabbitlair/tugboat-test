@@ -1,20 +1,20 @@
 services:
     apache:
         image: tugboatqa/httpd
-        aliases: test
-        http: true
-        https: false
+        urls:
+            alias0:
+              - url: /
+                visualdiff:
+                    threshold:
+                        desktop: 90
+                        mobile: 95
+                        tablet: 99
         commands:
             init:
                 - echo "********** INIT **********"
-                - apt-get update
-                - apt-get install bsd-mailx
-                - rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
                 - ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
             update:
                 - echo "********** UPDATE **********"
             build:
                 - echo "********** BUILD **********"
-                - cat .tugboat/tugboat.txt | mail -s "[1] Tugboat Preview ${TUGBOAT_PREVIEW_ID}" tugboat@example.com
-                - cat .tugboat/tugboat.txt | mail -s "[2] Tugboat Preview ${TUGBOAT_PREVIEW_ID}" tugboat@example.com
                 - cat .tugboat/tugboat.txt
