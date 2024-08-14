@@ -1,1 +1,1 @@
-<?php echo $_SERVER['HTTP_HOST']; ?>
+<?php echo "Hello from " . $_SERVER['HTTP_HOST']; ?>
