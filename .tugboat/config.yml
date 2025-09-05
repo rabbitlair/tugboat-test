@@ -12,7 +12,6 @@ services:
         - docker-php-ext-enable zip
         - docker-php-ext-configure gd --with-jpeg --with-freetype
         - docker-php-ext-install gd
-        - pecl install imagick
         - docker-php-ext-enable imagick
         - echo "upload_max_filesize=100M" >> /usr/local/etc/php/conf.d/tugboat.ini
         - echo "post_max_size=100M" >> /usr/local/etc/php/conf.d/tugboat.ini
